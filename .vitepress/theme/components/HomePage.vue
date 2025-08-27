@@ -11,35 +11,33 @@ const displayName = main.name || siteName
 </script>
 
 <template>
-  <div class="content" style="display:flex;justify-content:center;">
-    <div class="content-container" style="max-width:760px; width:100%; padding: 48px 16px;">
-      <main class="main" style="display:flex;flex-direction:column;align-items:center;text-align:center;">
-        <img :src="avatar" alt="avatar" style="width:160px;height:160px;border-radius:50%;object-fit:cover;border:2px solid rgba(0,0,0,0.06);" />
-        <h1 style="margin-top:16px;margin-bottom:8px;">{{ displayName }}</h1>
-        <p style="margin:0 0 20px 0;color:var(--vp-c-emphasis);">{{ main.title || main.desc || '' }}</p>
+  <div class="content profile-page">
+    <div class="profile-wrap">
+      <main class="profile-main">
+        <img :src="avatar" alt="avatar" class="profile-avatar" />
+        <h1 class="profile-name">{{ displayName }}</h1>
+        <p class="profile-sub">{{ main.title || main.desc || '' }}</p>
 
-        <!-- GitHub profile / contribution chart links -->
-        <div style="display:flex;gap:12px;align-items:center;margin-bottom:32px;">
+        <div class="profile-github">
           <a v-if="githubUsername" :href="`https://github.com/${githubUsername}`" target="_blank" rel="noopener noreferrer" class="github-link">
-            <img :src="`https://github.com/${githubUsername}.png`" alt="github avatar" style="width:36px;height:36px;border-radius:6px;" />
-            <span style="margin-left:8px;color:var(--vp-c-emphasis);">@{{ githubUsername }}</span>
+            <img :src="`https://github.com/${githubUsername}.png`" alt="github avatar" class="github-mini" />
+            <span class="github-handle">@{{ githubUsername }}</span>
           </a>
-          <img v-if="githubUsername" :src="`https://ghchart.rshah.org/${githubUsername}`" alt="GitHub contributions" style="height:104px;" />
+          <img v-if="githubUsername" :src="`https://ghchart.rshah.org/${githubUsername}`" alt="GitHub contributions" class="github-chart" />
         </div>
 
-        <section style="width:100%;text-align:left;">
+        <section class="papers">
           <h2>Selected publications</h2>
-          <ul style="padding-left:1rem;">
-            <li v-for="(p, i) in papers" :key="i" style="margin:12px 0;">
-              <div>
-                <a v-if="p.link" :href="p.link" target="_blank" rel="noopener noreferrer" style="font-weight:600;color:var(--vp-c-emphasis);">{{ p.title }}</a>
-                <span v-else style="font-weight:600;color:var(--vp-c-emphasis);">{{ p.title }}</span>
+          <ul>
+            <li v-for="(p, i) in papers" :key="i">
+              <div class="paper-title">
+                <a v-if="p.link" :href="p.link" target="_blank" rel="noopener noreferrer">{{ p.title }}</a>
+                <span v-else>{{ p.title }}</span>
               </div>
-              <div style="color:var(--vp-c-muted);font-size:0.95rem;margin-top:4px;">
+              <div class="paper-meta">
                 <span v-if="p.venue">{{ p.venue }}</span>
                 <span v-if="p.year"> · {{ p.year }}</span>
                 <span v-if="p.doi"> · DOI: <a :href="`https://doi.org/${p.doi}`" target="_blank" rel="noopener noreferrer">{{ p.doi }}</a></span>
-                <span v-if="p.notes"> · {{ p.notes }}</span>
               </div>
             </li>
           </ul>
@@ -48,3 +46,59 @@ const displayName = main.name || siteName
     </div>
   </div>
 </template>
+
+<style scoped>
+.profile-page {
+  min-height: calc(100vh - var(--vp-navbar-height, 56px));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+}
+.profile-wrap {
+  width: 100%;
+  max-width: 1000px;
+}
+.profile-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.profile-avatar {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(0,0,0,0.06);
+}
+.profile-name {
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-size: 2rem;
+}
+.profile-sub {
+  margin: 0 0 20px 0;
+  color: var(--vp-c-emphasis);
+}
+.profile-github {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.github-mini { width:40px;height:40px;border-radius:6px }
+.github-handle { margin-left:6px;color:var(--vp-c-emphasis) }
+.github-chart { height:140px; max-width:100%; object-fit:contain }
+.papers { width:100%; text-align:left }
+.papers h2 { margin-bottom:8px }
+.papers ul { padding-left:1rem }
+.papers li { margin:12px 0 }
+.paper-title a { font-weight:600; color:var(--vp-c-emphasis) }
+.paper-meta { color:var(--vp-c-muted); font-size:0.95rem; margin-top:4px }
+
+@media (max-width:720px) {
+  .profile-avatar { width:160px;height:160px }
+  .github-chart { height:96px }
+}
+</style>
