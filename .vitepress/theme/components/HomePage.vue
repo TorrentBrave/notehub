@@ -29,7 +29,7 @@ const displayName = main.name || siteName
         </div>
 
         <section class="papers">
-          <h2>Selected publications</h2>
+          <h2>Publications</h2>
           <ul>
             <li v-for="(p, i) in papers" :key="i">
               <div class="paper-title">

@@ -8,7 +8,7 @@ import { InlineLinkPreviewElementTransform } from '@nolebase/vitepress-plugin-in
 import { buildEndGenerateOpenGraphImages } from '@nolebase/vitepress-plugin-og-image/vitepress'
 import { UnlazyImages } from '@nolebase/markdown-it-unlazy-img'
 
-import { discordLink, githubRepoLink, siteDescription, siteName, targetDomain } from '../metadata'
+import { githubRepoLink, siteDescription, siteName, targetDomain } from '../metadata'
 import { creatorNames, creatorUsernames } from './creators'
 import { sidebar } from './docsMetadata.json'
 
@@ -134,7 +134,13 @@ export default defineConfig({
     },
     socialLinks: [
       { icon: 'github', link: githubRepoLink },
-      { icon: 'discord', link: discordLink },
+      {
+        // Kaggle icon: embed provided PNG via an inline SVG image element
+        icon: {
+          svg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><image href="https://img.icons8.com/?size=100&id=s1rM4KTx2Huf&format=png&color=000000" width="24" height="24"/></svg>'
+        },
+        link: 'https://www.kaggle.com/torrentbrave',
+      },
     ],
     footer: {
       message: '用 <span style="color: #e25555;">&#9829;</span> 撰写',
