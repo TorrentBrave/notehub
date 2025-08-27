@@ -19,10 +19,12 @@ const displayName = main.name || siteName
         <p class="profile-sub">{{ main.title || main.desc || '' }}</p>
 
         <div class="profile-github">
+          <!--
           <a v-if="githubUsername" :href="`https://github.com/${githubUsername}`" target="_blank" rel="noopener noreferrer" class="github-link">
             <img :src="`https://github.com/${githubUsername}.png`" alt="github avatar" class="github-mini" />
             <span class="github-handle">@{{ githubUsername }}</span>
           </a>
+          -->
           <img v-if="githubUsername" :src="`https://ghchart.rshah.org/${githubUsername}`" alt="GitHub contributions" class="github-chart" />
         </div>
 
@@ -38,6 +40,15 @@ const displayName = main.name || siteName
                 <span v-if="p.venue">{{ p.venue }}</span>
                 <span v-if="p.year"> · {{ p.year }}</span>
                 <span v-if="p.doi"> · DOI: <a :href="`https://doi.org/${p.doi}`" target="_blank" rel="noopener noreferrer">{{ p.doi }}</a></span>
+              </div>
+
+              <!-- Embedded viewer when embed flag is set -->
+              <div v-if="p.embed" class="paper-embed-wrap">
+                <div class="paper-embed-bar">
+                  <span class="embed-label">Embedded preview</span>
+                  <a :href="p.link" target="_blank" rel="noopener noreferrer" class="open-link">Open in new tab</a>
+                </div>
+                <iframe :src="p.link" class="paper-embed" frameborder="0" />
               </div>
             </li>
           </ul>
