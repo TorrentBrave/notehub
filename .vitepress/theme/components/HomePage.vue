@@ -45,7 +45,14 @@ const displayName = main.name || siteName
               <!-- Embedded viewer when embed flag is set -->
               <div v-if="p.embed" class="paper-embed-wrap">
                 <div class="paper-embed-bar">
-                  <span class="embed-label">Embedded preview</span>
+                  <span class="embed-label">
+                    <template v-if="p.citationsLink">
+                      <a :href="p.citationsLink" target="_blank" rel="noopener noreferrer">被引用数</a>
+                    </template>
+                    <template v-else>
+                      Embedded preview
+                    </template>
+                  </span>
                   <a :href="p.link" target="_blank" rel="noopener noreferrer" class="open-link">Open in new tab</a>
                 </div>
                 <div class="paper-embed-outer">
