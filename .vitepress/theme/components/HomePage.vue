@@ -47,7 +47,7 @@ const displayName = main.name || siteName
                 <div class="paper-embed-bar">
                   <span class="embed-label">
                     <template v-if="p.citationsLink">
-                      <a :href="p.citationsLink" target="_blank" rel="noopener noreferrer">被引用数</a>
+                      <a :href="p.citationsLink" target="_blank" rel="noopener noreferrer">CITED BY · 1</a>
                     </template>
                     <template v-else>
                       Embedded preview
