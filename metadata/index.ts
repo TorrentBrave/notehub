@@ -9,7 +9,7 @@ export const siteDescription = 'AGI Researcher & Kaggle Expert'
 export const include = ['笔记', '生活']
 
 /** Repo */
-export const githubRepoLink = 'https://github.com/nolebase/nolebase'
+export const githubRepoLink = 'https://github.com/TorrentBrave'
 /** Discord */
 export const discordLink = 'https://discord.gg/XuNFDcDZGj'
 

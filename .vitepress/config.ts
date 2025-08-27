@@ -165,7 +165,7 @@ export default defineConfig({
 
         // Add title ang tags field in frontmatter to search
         // You can exclude a page from search by adding search: false to the page's frontmatter.
-        _render(src, env, md) {
+      _render(src, env, md) {
           // without `md.render(src, env)`, the some information will be missing from the env.
           let html = md.render(src, env)
           let tagsPart = ''
@@ -220,7 +220,7 @@ export default defineConfig({
       dark: 'one-dark-pro',
     },
     math: true,
-    config: (md) => {
+  config: (md: any) => {
       md.use(MarkdownItFootnote)
       md.use(MarkdownItMathjax3)
       md.use(BiDirectionalLinks({
