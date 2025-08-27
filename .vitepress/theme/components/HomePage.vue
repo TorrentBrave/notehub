@@ -48,7 +48,9 @@ const displayName = main.name || siteName
                   <span class="embed-label">Embedded preview</span>
                   <a :href="p.link" target="_blank" rel="noopener noreferrer" class="open-link">Open in new tab</a>
                 </div>
-                <iframe :src="p.link" class="paper-embed" frameborder="0" />
+                <div class="paper-embed-outer">
+                  <iframe :src="p.link" class="paper-embed" frameborder="0" />
+                </div>
               </div>
             </li>
           </ul>
@@ -107,6 +109,21 @@ const displayName = main.name || siteName
 .papers li { margin:12px 0 }
 .paper-title a { font-weight:600; color:var(--vp-c-emphasis) }
 .paper-meta { color:var(--vp-c-muted); font-size:0.95rem; margin-top:4px }
+
+/* Embedded PDF viewer styles */
+.paper-embed-wrap { width:100%; margin-top:12px }
+.paper-embed-bar { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:8px }
+.embed-label { color:var(--vp-c-muted); font-size:0.9rem }
+.open-link { color:var(--vp-c-brand) }
+.paper-embed-outer { width:100%; border-radius:8px; overflow:hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+.paper-embed { width:100%; height:640px; border:0; display:block }
+
+@media (max-width:980px) {
+  .paper-embed { height:520px }
+}
+@media (max-width:720px) {
+  .paper-embed { height:420px }
+}
 
 @media (max-width:720px) {
   .profile-avatar { width:160px;height:160px }

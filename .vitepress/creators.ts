@@ -20,13 +20,13 @@ const getAvatarUrl = (name: string) => `https://github.com/${name}.png`
 
 export const creators: Creator[] = [
   {
-    name: '絢香猫',
+    name: 'BoHao Chen',
     avatar: '',
-    username: 'nekomeowww',
-    title: 'BoHao Chen 原始创作者',
+    username: 'TorrentBrave',
+    title: 'AGI Researcher & Kaggle Expert',
     desc: '开发者，专注于基础设施维护，数据分析，后端、DevOps 开发',
     links: [
-      { type: 'github', icon: 'github', link: 'https://github.com/nekomeowww' },
+      { type: 'github', icon: 'github', link: 'https://github.com/TorrentBrave' },
       { type: 'twitter', icon: 'twitter', link: 'https://twitter.com/ayakaneko' },
     ],
     nameAliases: ['nekomeowww', '绚香猫', '絢香猫', 'Neko Ayaka', 'Ayaka Neko'],
