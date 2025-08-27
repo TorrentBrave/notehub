@@ -38,9 +38,9 @@
     "."
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "workbench.colorCustomizations": {
-    "activityBar.background": "#3A2C04",
-    "titleBar.activeBackground": "#523D05",
-    "titleBar.activeForeground": "#FEFAED"
-  }
+  //"workbench.colorCustomizations": {
+  //"activityBar.background": "#3A2C04",
+  //"titleBar.activeBackground": "#523D05",
+  //"titleBar.activeForeground": "#FEFAED"
+  //}
 }
