@@ -29,8 +29,10 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.12.2",
+    "@iconify-json/carbon": "^1.2.13",
     "@iconify-json/eos-icons": "^1.1.10",
     "@iconify-json/ic": "^1.1.17",
+    "@iconify-json/icon-park-outline": "^1.2.4",
     "@iconify-json/octicon": "^1.1.53",
     "@iconify-json/svg-spinners": "^1.1.2",
     "@netlify/functions": "^1.6.0",

@@ -67,4 +67,3 @@ giscus 利用了 [GitHub Discussions](https://docs.github.com/en/discussions) 
 - https://github.com/oleeskild/obsidian-digital-garden
 - https://github.com/ObsidianPublisher/obsidian-github-publisher
 - https://github.com/alangrainger/share-note
-
