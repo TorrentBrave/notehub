@@ -3,7 +3,7 @@
 export const siteName = 'BoHao Chen'
 // export const siteShortName = 'BoHao Chen'
 export const siteShortName = 'BoHao Chen'
-export const siteDescription = '记录回忆，知识和畅想的地方'
+export const siteDescription = 'AGI Researcher & Kaggle Expert'
 
 /** 文档所在目录 */
 export const include = ['笔记', '生活']
