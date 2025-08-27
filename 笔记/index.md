@@ -1,8 +1,8 @@
 # 📒 笔记
 
-## 小音和猫猫的知识库
+## BoHao Chen的知识库
 
-欢迎来到小音和猫猫的知识库 [BoHao Chen](https://nolebase.ayaka.io)，这里是 📒 笔记分区
+欢迎来到知识库 [BoHao Chen](https://nolebase.ayaka.io)，这里是 📒 笔记分区
 
 ## 想要自己部署和在本地启动强大的 BoHao Chen 知识库，或者自己拥有一份？
 
