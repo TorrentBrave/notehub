@@ -137,7 +137,7 @@ export default defineConfig({
       {
         // Kaggle icon: embed provided PNG via an inline SVG image element
         icon: {
-          svg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><image href="https://img.icons8.com/?size=100&id=s1rM4KTx2Huf&format=png&color=000000" width="24" height="24"/></svg>'
+          svg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><image href="https://img.icons8.com/?size=100&id=bMncK0wGFANA&format=png&color=000000" width="24" height="24"/></svg>'
         },
         link: 'https://www.kaggle.com/torrentbrave',
       },
