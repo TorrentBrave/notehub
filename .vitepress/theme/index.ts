@@ -25,9 +25,10 @@ import {
   NolebaseGitChangelogPlugin,
 } from '@nolebase/vitepress-plugin-git-changelog/client'
 
-import {
-  NolebasePagePropertiesPlugin,
-} from '@nolebase/vitepress-plugin-page-properties/client'
+// import {
+//   NolebasePagePropertiesPlugin,
+// } from '@nolebase/vitepress-plugin-page-properties/client'
+// import registerCJKPageProperties from './client/cjk-page-properties'
 
 import {
   NolebaseUnlazyImg,
@@ -105,44 +106,24 @@ const ExtendedTheme: Theme = {
       mapContributors: creators,
     })
 
-    app.use(NolebaseInlineLinkPreviewPlugin)
-    app.use(NolebaseGitChangelogPlugin)
-    app.use(NolebasePagePropertiesPlugin<{
-      tags: string[]
-      progress: number
-    }>(), {
-      properties: {
-        'zh-CN': [
-          {
-            key: 'tags',
-            type: 'tags',
-            title: '标签',
-          },
-          {
-            key: 'progress',
-            type: 'progress',
-            title: '完成进度',
-          },
-          {
-            key: 'wordCount',
-            type: 'dynamic',
-            title: '字数',
-            options: {
-              type: 'wordsCount',
-            },
-          },
-          {
-            key: 'readingTime',
-            type: 'dynamic',
-            title: '阅读时间',
-            options: {
-              type: 'readingTime',
-              dateFnsLocaleName: 'zhCN',
-            },
-          },
-        ],
-      },
-    })
+  app.use(NolebaseInlineLinkPreviewPlugin)
+  app.use(NolebaseGitChangelogPlugin)
+  // Page properties (word count / reading time) disabled per user request.
+  // To re-enable, uncomment the imports at the top and the block below.
+  // app.use(NolebasePagePropertiesPlugin<{
+  //   tags: string[]
+  //   progress: number
+  // }>(), {
+  //   properties: {
+  //     'zh-CN': [
+  //       { key: 'tags', type: 'tags', title: '标签' },
+  //       { key: 'progress', type: 'progress', title: '完成进度' },
+  //       { key: 'wordCount', type: 'dynamic', title: '字数', options: { type: 'wordsCount' } },
+  //       { key: 'readingTime', type: 'dynamic', title: '阅读时间', options: { type: 'readingTime', dateFnsLocaleName: 'zhCN' } },
+  //     ],
+  //   },
+  // })
+  // registerCJKPageProperties is intentionally not called
   },
   setup() {
     // Get frontmatter and route
