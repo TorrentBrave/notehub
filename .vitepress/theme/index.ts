@@ -28,6 +28,7 @@ import {
 import {
   NolebasePagePropertiesPlugin,
 } from '@nolebase/vitepress-plugin-page-properties/client'
+import registerCJKPageProperties from './client/cjk-page-properties'
 
 import {
   NolebaseUnlazyImg,
@@ -127,6 +128,9 @@ const ExtendedTheme: Theme = {
             key: 'wordCount',
             type: 'dynamic',
             title: '字数',
+            // Use the plugin's supported wordsCount dynamic type to satisfy
+            // TypeScript typings. For better Chinese (CJK) support we can add
+            // a client-side fallback later that counts characters if needed.
             options: {
               type: 'wordsCount',
             },
@@ -143,6 +147,12 @@ const ExtendedTheme: Theme = {
         ],
       },
     })
+    // Register runtime CJK page-properties updater (client-side only)
+    try {
+      registerCJKPageProperties(app)
+    } catch (e) {
+      // ignore in SSR/build
+    }
   },
   setup() {
     // Get frontmatter and route
