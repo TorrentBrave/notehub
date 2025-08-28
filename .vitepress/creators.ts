@@ -21,7 +21,7 @@ const getAvatarUrl = (name: string) => `https://github.com/${name}.png`
 export const creators: Creator[] = [
   {
     name: 'BoHao Chen',
-  avatar: '/head.jpg',
+    avatar: '/head.jpg',
     username: 'TorrentBrave',
     title: 'AGI Researcher & Kaggle Expert',
     desc: '开发者，专注于基础设施维护，数据分析，后端、DevOps 开发',
